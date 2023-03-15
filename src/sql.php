@@ -60,10 +60,23 @@
 			return (object) $result;
 		}
 
+		public function truncate (): SQL
+		{
+			if ($this->info['driver'] === 'pgsql') {
+				$this->query = 'TRUNCATE '.static::$table;
+			} else {
+				$this->query = 'TRUNCATE TABLE '.static::$table;
+			}
+
+			return $this;
+		}
+
 		public function table (string $table): SQL
 		{
 			if (!empty($table)) {
 				static::$table = $table;
+			} else {
+				static::$table = $this->info['table'];
 			}
 
 			return new SQL($this->info);

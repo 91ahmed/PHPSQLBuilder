@@ -418,13 +418,6 @@
 			return $this;
 		}
 
-		public function truncate (): Builder
-		{
-			$this->query = 'TRUNCATE TABLE '.static::$table;
-			
-			return $this;
-		}
-
 		public function insert (array $data): Builder
 		{
 			// Check the array is associative or not

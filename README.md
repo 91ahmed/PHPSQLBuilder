@@ -60,6 +60,7 @@ $result = $sql->table('users')
 [having()](#having) | HAVING clause used with GROUP BY to specify a condition. | 1. _(string)_ column name | HAVING column
 [orderBy()](#ordeBy) | Used to sort rows according to specific columns. | 1. _(sequential array)_ columns<br/><br/>2. _(string)_ sort ASC/DESC | ORDER BY columns DESC
 [delete()](#delete) | Generate sql delete statement. | no | DELETE FROM table
+[truncate()](#truncate) | Generate sql truncate statement. | no | TRUNCATE table
 [insert()](#insert) | Generate sql insert statement. | 1. _(associative array)_ column and value | INSERT INTO table (columns) VALUES (values)
 [update()](#update) | Generate sql update statement. | 1. _(associative array)_ column and value | UPDATE table SET column = value
 [save()](#delete) | You should call this method at the end of insert, update and delete methods to execute the query. | no | ___
@@ -307,6 +308,14 @@ $sql->table('tablename')
 $sql->table('tablename')
     ->delete()
     ->where('col')->in(['val1', 'val2', 'val3'])
+    ->save();
+```
+
+#### truncate
+``` php
+// EX 1
+$sql->table('tablename')
+    ->truncate()
     ->save();
 ```
 
