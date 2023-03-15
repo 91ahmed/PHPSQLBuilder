@@ -3,6 +3,11 @@ PHP query builder to create and execute SQL queries for different database syste
 
 The query builder support ``mysql``  ``postgresql``  ``sql server``  ``sqlite`` and provide plenty of methods to cover the most of SQL statements and apply restrictions and parameters to the data to verify and filter the user inputs in order to prevent SQl injection.
 
+### Install via composer
+``` bash
+
+```
+
 ### Example
 ``` php
 require ('vendor/autoload.php');
