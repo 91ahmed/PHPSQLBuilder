@@ -1,0 +1,17 @@
+{
+    "name": "ahmed/php-sql-builder",
+    "description": "php query builder to execute sql queries for different database systems.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpSqlBuilder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "91ahmed",
+            "email": "ahmedh12491@gmail.com"
+        }
+    ],
+    "require": {}
+}
