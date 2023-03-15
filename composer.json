@@ -1,5 +1,5 @@
 {
-    "name": "sqlbuilder/php-sql-builder",
+    "name": "sqlbuilder/phpsqlbuilder",
     "description": "php query builder to execute sql queries for different database systems.",
     "license": "MIT",
     "autoload": {
