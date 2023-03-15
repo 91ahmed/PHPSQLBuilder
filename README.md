@@ -5,7 +5,7 @@ The query builder support ``mysql``  ``postgresql``  ``sql server``  ``sqlite`` 
 
 ### Install via composer
 ``` bash
-
+composer require sqlbuilder/phpsqlbuilder
 ```
 
 ### Example
@@ -43,7 +43,7 @@ $result = $sql->table('users')
 [selectTop()](#selectTop) | Select limited rows. (support sql server only) | 1. _(integer)_ rows number<br/><br/>2. _(sequential array)_ columns | SELECT TOP 5 columns
 [distinct()](#distinct) | Select distinct rows. |  1. _(sequential array)_ columns | SELECT DISTINCT columns
 [alias()](#alias) | Select with alias name. | 1. _(associative array)_ column and alias name | SELECT column AS alias
-[max()<br/>min()<br/>sum()<br/>avg()<br/>count()](#aggregate-functions) | Select with aggregate functions. The five methods accepts 2 parameters, first one is the column name and the second is *_optional_ the alias name. | 1. _(string)_ column name<br/><br/>2. _(string)_ alias name *_optional_ | SELECT MAX(column)
+[max()<br/><br/>min()<br/><br/>sum()<br/><br/>avg()<br/><br/>count()](#aggregate-functions) | Select with aggregate functions. The five methods accepts 2 parameters, first one is the column name and the second is *_optional_ the alias name. | 1. _(string)_ column name<br/><br/>2. _(string)_ alias name *_optional_ | SELECT MAX(column)
 [where()](#where) | Add WHERE clause to specify a condition. | 1. _(string)_ column name | WHERE column
 [whereNot()](#whereNot) | Add NOT keyword to WHERE clause. | 1. _(string)_ column name | WHERE NOT column
 [value()](#where) | Used to specify the operator and the value after WHERE statement. | 1. _(string)_ the operator<br/><br/>2. _(scalar)_ the value | = value
@@ -52,10 +52,10 @@ $result = $sql->table('users')
 [like()](#like-in-between) | Used in a WHERE clause to search for a specified pattern. | 1. _(string)_ pattern | LIKE %pattern%
 [in()](#like-in-between) | Used in a WHERE clause to specify multiple values. | 1. _(sequential array)_ values | IN (1,3,6)
 [between()](#like-in-between) | Used in a WHERE clause selects values within a given range. | 1. _(scalar)_ value1<br/><br/>2. _(scalar)_ value2 | BETWEEN value1 AND value2
-[and()<br/>or()<br/>not()](#and-or-not) | These operetors can be combined with the query to add multiple conditions. | _(string)_ column name | AND column / OR column
-[innerJoin()<br/>leftJoin()<br/>rightJoin()<br/>fullJoin()](#joins) | Join multiple tables. | 1. _(string)_ table name<br/><br/>2. _(string)_ column1<br/><br/>3. _(string)_ operator<br/><br/>4. _(string)_ column2 | INNER JOIN table ON column1 = column2
+[and()<br/><br/>or()<br/><br/>not()](#and-or-not) | These operetors can be combined with the query to add multiple conditions. | _(string)_ column name | AND column / OR column
+[innerJoin()<br/><br/>leftJoin()<br/><br/>rightJoin()<br/><br/>fullJoin()](#joins) | Join multiple tables. | 1. _(string)_ table name<br/><br/>2. _(string)_ column1<br/><br/>3. _(string)_ operator<br/><br/>4. _(string)_ column2 | INNER JOIN table ON column1 = column2
 [limit()](#limit) | Retrieve limited rows. | 1. _(interger)_ rows number | LIMIT 5
-[union()<br/>unionAll()](#union-unionAll) | Used to combine the result of two tables. | 1. _(sequential array)_ columns<br/><br/>2. _(string)_ table2 | UNION SELECT columns FROM table2
+[union()<br/><br/>unionAll()](#union-unionAll) | Used to combine the result of two tables. | 1. _(sequential array)_ columns<br/><br/>2. _(string)_ table2 | UNION SELECT columns FROM table2
 [groupBy()](#groupBy) | Used to arrange identical data into groups. | 1. _(sequential array)_ columns | GROUP BY columns
 [having()](#having) | HAVING clause used with GROUP BY to specify a condition. | 1. _(string)_ column name | HAVING column
 [orderBy()](#ordeBy) | Used to sort rows according to specific columns. | 1. _(sequential array)_ columns<br/><br/>2. _(string)_ sort ASC/DESC | ORDER BY columns DESC
